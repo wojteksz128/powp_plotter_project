@@ -46,7 +46,7 @@ public class TestPlotSoftPatterns
 		context.addDriver("Client Plotter", clientPlotter);
 		Application.getComponent(DriverManager.class).setCurrentPlotter(clientPlotter);
 		
-		IPlotter plotter = new PlotterMagicAdapter(context);
+		IPlotter plotter = new PlotterMagicAdapter(Application.getComponent(DrawPanelController.class));
 		context.addDriver("Buggy Simulator", plotter);
 
 		context.updateDriverInfo();
@@ -57,6 +57,7 @@ public class TestPlotSoftPatterns
 	 * 
 	 * @param context Application context.
 	 */
+	@SuppressWarnings("unused")
 	private static void setupDefaultDrawerVisibilityManagement(Context context) {
 		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
         context.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility", 
