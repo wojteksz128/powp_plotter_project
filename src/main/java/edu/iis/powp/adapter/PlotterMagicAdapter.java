@@ -1,6 +1,7 @@
 package edu.iis.powp.adapter;
 
 import edu.iis.client.plottermagic.IPlotter;
+import edu.iis.powp.app.Context;
 import edu.kis.powp.drawer.panel.DrawPanelController;
 import edu.kis.powp.drawer.shape.ILine;
 import edu.kis.powp.drawer.shape.LineFactory;
@@ -13,8 +14,9 @@ public class PlotterMagicAdapter extends DrawPanelController implements IPlotter
 { 
 	private int startX = 0, startY = 0;
 	
-    public PlotterMagicAdapter() {
+    public PlotterMagicAdapter(Context context) {
 		super();
+		this.initialize(context.getFreePanel());
 	}
     
 	@Override
