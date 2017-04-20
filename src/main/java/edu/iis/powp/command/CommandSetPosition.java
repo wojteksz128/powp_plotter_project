@@ -1,5 +1,7 @@
 package edu.iis.powp.command;
 
+import edu.iis.client.plottermagic.IPlotter;
+
 public class CommandSetPosition implements PlotterCommand {
 	
 	private int x;
@@ -12,7 +14,7 @@ public class CommandSetPosition implements PlotterCommand {
 	}
 
 	@Override
-	public void execute() {
+	public void execute(IPlotter plotter) {
 		// TODO Auto-generated method stub
 
 	}
