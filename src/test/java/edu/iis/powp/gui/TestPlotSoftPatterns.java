@@ -7,12 +7,14 @@ import java.util.logging.Logger;
 
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
+import edu.iis.client.plottermagic.preset.FiguresJane;
 import edu.iis.powp.adapter.LinePlotterAdapter;
 import edu.iis.powp.adapter.PlotterMagicAdapter;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.app.Context;
 import edu.iis.powp.app.DriverManager;
 import edu.iis.powp.appext.ApplicationWithDrawer;
+import edu.iis.powp.command.FigureCommandFactory;
 import edu.iis.powp.events.predefine.SelectChangeVisibleOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureOneOptionListener;
 import edu.iis.powp.events.predefine.SelectTestFigureTwoOptionListener;
@@ -36,6 +38,7 @@ public class TestPlotSoftPatterns
 		
 		context.addTest("Figure Joe 1", selectTestFigureOneOptionListener);
 		context.addTest("Figure Joe 2", selectTestFigureTwoOptionListener);
+		context.addTest("Rectangle", (a) -> FigureCommandFactory.getRectangle(10, 10, 10, 20).execute(Application.getComponent(DriverManager.class).getCurrentPlotter()));
 	}
 
 	/**
