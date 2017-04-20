@@ -15,8 +15,7 @@ public class CommandSetPosition implements PlotterCommand {
 
 	@Override
 	public void execute(IPlotter plotter) {
-		// TODO Auto-generated method stub
-
+		plotter.setPosition(x, y);
 	}
 
 }
