@@ -7,7 +7,6 @@ import java.util.logging.Logger;
 
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
-import edu.iis.client.plottermagic.preset.FiguresJane;
 import edu.iis.powp.adapter.LinePlotterAdapter;
 import edu.iis.powp.adapter.PlotterMagicAdapter;
 import edu.iis.powp.app.Application;
@@ -38,7 +37,7 @@ public class TestPlotSoftPatterns
 		
 		context.addTest("Figure Joe 1", selectTestFigureOneOptionListener);
 		context.addTest("Figure Joe 2", selectTestFigureTwoOptionListener);
-		context.addTest("Rectangle", (a) -> FigureCommandFactory.getRectangle(10, 10, 10, 20).execute(Application.getComponent(DriverManager.class).getCurrentPlotter()));
+		context.addTest("Rectangle", (a) -> FigureCommandFactory.getRectangle(-100, -50, 200, 100).execute(Application.getComponent(DriverManager.class).getCurrentPlotter()));
 	}
 
 	/**
