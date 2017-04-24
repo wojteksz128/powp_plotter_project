@@ -38,6 +38,7 @@ public class TestPlotSoftPatterns
 		context.addTest("Figure Joe 1", selectTestFigureOneOptionListener);
 		context.addTest("Figure Joe 2", selectTestFigureTwoOptionListener);
 		context.addTest("Rectangle", (a) -> FigureCommandFactory.getRectangle(-100, -50, 200, 100).execute(Application.getComponent(DriverManager.class).getCurrentPlotter()));
+		context.addTest("Equilateral triangle", (a) -> FigureCommandFactory.getEquilateralTriangle(0, -66, 100).execute(Application.getComponent(DriverManager.class).getCurrentPlotter()));
 	}
 
 	/**

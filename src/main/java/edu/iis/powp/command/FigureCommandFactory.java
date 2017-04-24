@@ -15,4 +15,14 @@ public class FigureCommandFactory {
 		
 		return new ComplexCommand(listOfCommands);
 	}
+	
+	public static PlotterCommand getEquilateralTriangle(int startX, int startY, int length) {
+		List<PlotterCommand> listOfCommands = new LinkedList<>();
+		listOfCommands.add(new CommandSetPosition(startX, startY));
+		listOfCommands.add(new CommandDrawLineToPosition(startX + (int)(Math.sin(Math.toRadians(150)) * length), startY - (int)(Math.cos(Math.toRadians(150)) * length)));
+		listOfCommands.add(new CommandDrawLineToPosition(startX + (int)(Math.sin(Math.toRadians(210)) * length), startY - (int)(Math.cos(Math.toRadians(210)) * length)));
+		listOfCommands.add(new CommandDrawLineToPosition(startX, startY));
+		
+		return new ComplexCommand(listOfCommands);
+	}
 }
