@@ -25,4 +25,17 @@ public class FigureCommandFactory {
 		
 		return new ComplexCommand(listOfCommands);
 	}
+	
+	public static PlotterCommand getCircle(int startX, int startY, int radius) {
+		List<PlotterCommand> listOfCommands = new LinkedList<>();
+		
+		float angle = 0.0f;
+		listOfCommands.add(new CommandSetPosition((int)(startX + Math.sin(angle) * radius), (int)(startY - Math.cos(angle) * radius)));
+		
+		for (; angle <= 2 * Math.PI; angle += 0.01) {
+			listOfCommands.add(new CommandDrawLineToPosition((int)(startX + Math.sin(angle) * radius), (int)(startY - Math.cos(angle) * radius)));
+		}
+		
+		return new ComplexCommand(listOfCommands);
+	}
 }
